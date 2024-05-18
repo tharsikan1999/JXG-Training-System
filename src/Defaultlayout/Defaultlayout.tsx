@@ -1,78 +1,182 @@
 import logo from "../assets/Img/JXG_logo.png";
-import { MdDashboard } from "react-icons/md";
+import {
+  MdDashboard,
+  MdFeedback,
+  MdAdminPanelSettings,
+  MdAssignment,
+} from "react-icons/md";
 import { IoIosPeople } from "react-icons/io";
-import { GiProgression } from "react-icons/gi";
-import { MdFeedback } from "react-icons/md";
+import { GiProgression, GiHamburgerMenu } from "react-icons/gi";
 import { TbReportSearch } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
-import { MdAdminPanelSettings } from "react-icons/md";
-import { MdAssignment } from "react-icons/md";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { useState } from "react";
+
 const DefaultLayout = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <div className="border-2 border-red-600 w-full min-h-screen flex">
-      <div className="border-2 border-red-600 min-h-screen w-96">
-        <div className=" border-2 border-red-600 h-20 flex px-8 cursor-pointer justify-between  items-center">
-          {" "}
-          <img src={logo} alt="logo.svg" className=" h-10" />
-          <GiHamburgerMenu className=" h-8 w-8" />
+    <div className="w-full min-h-screen flex bg-white">
+      <div
+        className={` text-white min-h-screen shadow-lg transition-all duration-300 ease-in-out ${
+          menuOpen ? "w-24" : "w-64"
+        }`}
+      >
+        <div className=" h-20 flex px-8 cursor-pointer justify-between items-center shadow-md">
+          <img
+            src={logo}
+            alt="logo.svg"
+            className={`h-8 transition-all duration-300 ${
+              menuOpen ? " hidden" : " flex"
+            }`}
+          />
+          <GiHamburgerMenu
+            className="h-8 w-8 text-gray-600"
+            onClick={toggleMenu}
+          />
         </div>
-        <div className=" border-4 border-blue-600 h-auto">
-          <ul className=" w-full flex flex-col items-center pt-10 pl-5 border-2 border-red-600">
-            <li className="  flex items-center w-11/12 mb-10 border-4 border-blue-800 ">
-              <MdDashboard className=" h-6 w-6 text-gray-600 hover:cursor-pointer hover:text-black" />
-              <p className=" text-lg font-semibold text-gray-600 hover:cursor-pointer ml-7 hover:text-black">
+        <div className="h-auto">
+          <ul className="flex flex-col items-center pt-10 px-7 space-y-10">
+            <li className="flex items-center w-full">
+              <MdDashboard
+                className={`${
+                  menuOpen ? "h-9 w-9" : "h-6 w-6"
+                } text-gray-400 hover:text-black transition-all duration-300 cursor-pointer `}
+              />
+
+              <p
+                className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-300 cursor-pointer ${
+                  menuOpen ? " hidden" : " flex"
+                } `}
+              >
                 Dashboard
               </p>
             </li>
-            <li className="  flex items-center w-11/12 mb-10">
-              <IoIosPeople className=" h-6 w-6 text-gray-600 hover:cursor-pointer hover:text-black " />
-              <p className=" text-lg font-semibold text-gray-600 hover:cursor-pointer hover:text-black ml-7">
-                Candidates
-              </p>
+            <li className="flex items-center w-full">
+              <IoIosPeople
+                className={`${
+                  menuOpen ? "h-9 w-9" : "h-6 w-6"
+                } text-gray-400 hover:text-black transition-all duration-300 cursor-pointer`}
+              />
+              {!menuOpen && (
+                <p
+                  className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-300 cursor-pointer ${
+                    menuOpen ? " hidden" : " flex"
+                  } `}
+                >
+                  Candidates
+                </p>
+              )}
             </li>
-            <li className="  flex items-center w-11/12 mb-10">
-              <MdAssignment className=" h-6 w-6 text-gray-600 hover:cursor-pointer hover:text-black " />
-              <p className=" text-lg font-semibold text-gray-600 hover:cursor-pointer hover:text-black ml-7">
-                Trainings
-              </p>
+            <li className="flex items-center w-full">
+              <MdAssignment
+                className={`${
+                  menuOpen ? "h-9 w-9" : "h-6 w-6"
+                } text-gray-400 hover:text-black transition-all duration-300 cursor-pointer`}
+              />
+              {!menuOpen && (
+                <p
+                  className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-300 cursor-pointer ${
+                    menuOpen ? " hidden" : " flex"
+                  } `}
+                >
+                  Trainings
+                </p>
+              )}
             </li>
-            <li className="  flex items-center w-11/12 mb-10">
-              <GiProgression className=" h-6 w-6 text-gray-600 hover:cursor-pointer hover:text-black " />
-              <p className=" text-lg font-semibold text-gray-600 hover:cursor-pointer hover:text-black ml-7">
-                Progress
-              </p>
+            <li className="flex items-center w-full">
+              <GiProgression
+                className={`${
+                  menuOpen ? "h-9 w-9" : "h-6 w-6"
+                } text-gray-400 hover:text-black transition-all duration-300 cursor-pointer`}
+              />
+              {!menuOpen && (
+                <p
+                  className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-300 cursor-pointer ${
+                    menuOpen ? " hidden" : " flex"
+                  } `}
+                >
+                  Progress
+                </p>
+              )}
             </li>
-            <li className="  flex items-center w-11/12 mb-10">
-              <MdFeedback className=" h-6 w-6 text-gray-600 hover:cursor-pointer hover:text-black " />
-              <p className=" text-lg font-semibold text-gray-600 hover:cursor-pointer hover:text-black ml-7">
-                Feedback
-              </p>
+            <li className="flex items-center w-full">
+              <MdFeedback
+                className={`${
+                  menuOpen ? "h-9 w-9" : "h-6 w-6"
+                } text-gray-400 hover:text-black transition-all duration-300 cursor-pointer`}
+              />
+              {!menuOpen && (
+                <p
+                  className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-300 cursor-pointer ${
+                    menuOpen ? " hidden" : " flex"
+                  } `}
+                >
+                  Feedback
+                </p>
+              )}
             </li>
-            <li className="  flex items-center w-11/12 mb-10">
-              <TbReportSearch className=" h-6 w-6 text-gray-600 hover:cursor-pointer hover:text-black " />
-              <p className=" text-lg font-semibold text-gray-600 hover:cursor-pointer hover:text-black ml-7">
-                Reports
-              </p>
+            <li className="flex items-center w-full">
+              <TbReportSearch
+                className={`${
+                  menuOpen ? "h-9 w-9" : "h-6 w-6"
+                } text-gray-400 hover:text-black transition-all duration-300 cursor-pointer`}
+              />
+              {!menuOpen && (
+                <p
+                  className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-300 cursor-pointer ${
+                    menuOpen ? " hidden" : " flex"
+                  } `}
+                >
+                  Reports
+                </p>
+              )}
             </li>
-            <li className="  flex items-center w-11/12 mb-10">
-              <CgProfile className=" h-6 w-6 text-gray-600 hover:cursor-pointer hover:text-black " />
-              <p className=" text-lg font-semibold text-gray-600 hover:cursor-pointer hover:text-black ml-7">
-                Profile
-              </p>
+            <li className="flex items-center w-full">
+              <CgProfile
+                className={`${
+                  menuOpen ? "h-9 w-9" : "h-6 w-6"
+                } text-gray-400 hover:text-black transition-all duration-300 cursor-pointer`}
+              />
+              {!menuOpen && (
+                <p
+                  className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-300 cursor-pointer ${
+                    menuOpen ? " hidden" : " flex"
+                  } `}
+                >
+                  Profile
+                </p>
+              )}
             </li>
-            <li className="  flex items-center w-11/12 mb-1 ">
-              <MdAdminPanelSettings className=" h-6 w-6 text-gray-600 hover:cursor-pointer hover:text-black " />
-              <p className=" text-lg font-semibold text-gray-600 hover:cursor-pointer hover:text-black ml-7">
-                Admin Settings
-              </p>
+            <li className="flex items-center w-full">
+              <MdAdminPanelSettings
+                className={`${
+                  menuOpen ? "h-9 w-9" : "h-6 w-6"
+                } text-gray-400 hover:text-black transition-all duration-300 cursor-pointer`}
+              />
+              {!menuOpen && (
+                <p
+                  className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-300 cursor-pointer ${
+                    menuOpen ? " hidden" : " flex"
+                  } `}
+                >
+                  Admin
+                </p>
+              )}
             </li>
           </ul>
         </div>
       </div>
-      <div className="border-2 border-green-600 w-full">
-        <header className="border-2 border-blue-600 w-full h-20"></header>
-        <section className="border-2 border-red-600 w-full h-auto"></section>
+      <div className="flex-1 p-10 bg-gray-100">
+        <header className="bg-white shadow-md rounded-md p-4 mb-6">
+          <h1 className="text-2xl font-bold text-gray-700">Header</h1>
+        </header>
+        <section className="bg-white shadow-md rounded-md p-6">
+          <p className="text-gray-600">Main content goes here</p>
+        </section>
       </div>
     </div>
   );
