@@ -10,6 +10,10 @@ import { GiProgression, GiHamburgerMenu } from "react-icons/gi";
 import { TbReportSearch } from "react-icons/tb";
 import { CgProfile } from "react-icons/cg";
 import { useState } from "react";
+import userImg from "../assets/Img/user.png";
+import { useEffect } from "react";
+import { MdSunny } from "react-icons/md";
+import { FaMoon } from "react-icons/fa";
 
 const menuItems = [
   { icon: MdDashboard, label: "Dashboard" },
@@ -23,14 +27,35 @@ const menuItems = [
 ];
 
 const DefaultLayout = () => {
+  // Add this code snippet to the DefaultLayout component
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  //night mode
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const html = document.documentElement;
+    if (isDarkMode) {
+      html.classList.add("dark");
+    } else {
+      html.classList.remove("dark");
+    }
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   return (
-    <div className="w-full min-h-screen flex bg-white">
+    <div
+      className={`w-full min-h-screen flex ${
+        isDarkMode ? "dark" : ""
+      } dark:bg-gray-900`}
+    >
       <div
         className={`text-white min-h-screen shadow-lg transition-all duration-1000 ease-in-out ${
           menuOpen ? "w-24" : "w-64"
@@ -55,32 +80,78 @@ const DefaultLayout = () => {
               const IconComponent = item.icon;
               return (
                 <li key={index} className="flex items-center w-full">
-                  <IconComponent
-                    className={`${
-                      menuOpen ? "h-9 w-9" : "h-6 w-6"
-                    } text-gray-400 hover:text-black transition-all duration-700 cursor-pointer`}
-                  />
-                  <p
-                    className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-[600ms] cursor-pointer ${
-                      menuOpen ? "opacity-0" : "opacity-100"
-                    }`}
-                    style={{
-                      transitionDelay: `${index * 100}ms`,
-                    }}
-                  >
-                    {item.label}
-                  </p>
+                  <div className="flex items-center">
+                    <IconComponent
+                      className={`${
+                        menuOpen ? "h-9 w-9" : "h-6 w-6"
+                      } text-gray-400 hover:text-black transition-all duration-700 cursor-pointer`}
+                    />
+                    <p
+                      className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-[600ms] cursor-pointer ${
+                        menuOpen ? "opacity-0" : "opacity-100"
+                      }`}
+                      style={{
+                        transitionDelay: `${index * 100}ms`,
+                      }}
+                    >
+                      {item.label}
+                    </p>
+                  </div>
                 </li>
               );
             })}
           </ul>
         </div>
       </div>
-      <div className="flex-1 p-10 bg-gray-100">
-        <header className="bg-white shadow-md rounded-md p-4 mb-6">
+      <div
+        className={`px-3 flex-1 ${isDarkMode ? "dark" : ""} dark:bg-gray-900 `}
+      >
+        <header className=" shadow-md rounded-md py-3 px-12  mb-6 flex justify-between items-center">
           <h1 className="text-2xl font-bold text-gray-700">Header</h1>
+          <div className=" border-2 border-red-600 flex space-x-10 ">
+            <div
+              className={`flex items-center justify-center   transition-colors duration-500`}
+            >
+              <label
+                htmlFor="toggle"
+                className="flex items-center cursor-pointer"
+              >
+                <div className="relative">
+                  {/* Hidden input */}
+                  <input
+                    type="checkbox"
+                    id="toggle"
+                    className="sr-only"
+                    checked={isDarkMode}
+                    onChange={toggleDarkMode}
+                  />
+                  {/* Switch */}
+                  <div className="block w-[70px] h-9 bg-gray-200 dark:bg-gray-600 rounded-full"></div>
+                  {/* Thumb */}
+                  <div
+                    className={`absolute left-1 top-1 w-7 h-7 bg-white dark:bg-gray-800 rounded-full transition-transform duration-300 ${
+                      isDarkMode ? "translate-x-8" : ""
+                    }`}
+                  ></div>
+                  {/* Icon */}
+                  <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none">
+                    {isDarkMode ? (
+                      <FaMoon className="h-6 w-6 text-gray-900 dark:text-white ml-2" />
+                    ) : (
+                      <MdSunny className="h-6 w-6 text-yellow-400 dark:text-yellow-300 ml-10" />
+                    )}
+                  </div>
+                </div>
+              </label>
+            </div>
+            <img
+              src={userImg}
+              alt="user"
+              className="h-14 w-14 rounded-full cursor-pointer"
+            />
+          </div>
         </header>
-        <section className="bg-white shadow-md rounded-md p-6">
+        <section className="shadow-md rounded-md p-6">
           <p className="text-gray-600">Main content goes here</p>
         </section>
       </div>
