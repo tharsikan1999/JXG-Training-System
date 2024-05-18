@@ -10,12 +10,14 @@ import Feedback from "./Pages/Feedback";
 import Reports from "./Pages/Reports";
 import Profile from "./Pages/Profile";
 import DefaultLayout from "./Layouts/DefaultLayout";
+import Home from "./Pages/Home";
 
 const App = () => {
   return (
     <>
       <Router>
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route
             path="/candidates"
             element={<DefaultLayout children={<Candidates />} />}

@@ -6,6 +6,10 @@ export default {
       colors: {
         CustomPurple: "#7F63F4",
         CustomGray: "#24303F",
+        CustomYellow: "#FABE23",
+      },
+      backgroundImage: {
+        "background-img": "url('src/assets/Img/background.png')",
       },
     },
   },

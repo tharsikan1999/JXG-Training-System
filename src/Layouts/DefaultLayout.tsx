@@ -69,6 +69,7 @@ const DefaultLayout = ({ children }: { children: ReactNode }) => {
         >
           <div className="h-20 flex px-6 cursor-pointer justify-between items-center shadow-md">
             <img
+              onClick={() => navigate("/")}
               src={logo}
               alt="logo.svg"
               className={`h-8 transition-all duration-1000 ml-1 ${
@@ -150,9 +151,9 @@ const DefaultLayout = ({ children }: { children: ReactNode }) => {
                       isDarkMode ? "translate-x-[27px]" : "translate-x-0"
                     }`}
                   ></div>
-                  <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none">
+                  <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none transition-all duration-[600ms]">
                     {isDarkMode ? (
-                      <FaMoon className="h-[18px] w-5 mb-[2px] text-gray-900 ml-[33px]" />
+                      <FaMoon className="h-[18px] w-5 mb-[2px] text-gray-900 ml-[33px] " />
                     ) : (
                       <MdSunny className="h-5 w-5 text-yellow-400 dark:text-yellow-300 ml-[6px]" />
                     )}
