@@ -108,10 +108,8 @@ const DefaultLayout = () => {
       >
         <header className=" shadow-md rounded-md py-3 px-12  mb-6 flex justify-between items-center">
           <h1 className="text-2xl font-bold text-gray-700">Header</h1>
-          <div className=" border-2 border-red-600 flex space-x-10 ">
-            <div
-              className={`flex items-center justify-center   transition-colors duration-500`}
-            >
+          <div className="flex space-x-10">
+            <div className="flex items-center justify-center transition-colors duration-500">
               <label
                 htmlFor="toggle"
                 className="flex items-center cursor-pointer"
@@ -126,19 +124,19 @@ const DefaultLayout = () => {
                     onChange={toggleDarkMode}
                   />
                   {/* Switch */}
-                  <div className="block w-[70px] h-9 bg-gray-200 dark:bg-gray-600 rounded-full"></div>
+                  <div className="block w-[73px] px-1 h-[34px] bg-gray-200 dark:bg-gray-600 rounded-full"></div>
                   {/* Thumb */}
                   <div
-                    className={`absolute left-1 top-1 w-7 h-7 bg-white dark:bg-gray-800 rounded-full transition-transform duration-300 ${
-                      isDarkMode ? "translate-x-8" : ""
+                    className={`absolute left-1 top-[2px] w-[30px] h-[30px] bg-white  rounded-full transition-transform duration-300 ${
+                      isDarkMode ? "translate-x-[35px]" : "translate-x-0"
                     }`}
                   ></div>
                   {/* Icon */}
                   <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none">
                     {isDarkMode ? (
-                      <FaMoon className="h-6 w-6 text-gray-900 dark:text-white ml-2" />
+                      <FaMoon className="h-6 w-6 mb-[2px] text-gray-900 ml-11" />
                     ) : (
-                      <MdSunny className="h-6 w-6 text-yellow-400 dark:text-yellow-300 ml-10" />
+                      <MdSunny className="h-6 w-6 text-yellow-400 dark:text-yellow-300 ml-2" />
                     )}
                   </div>
                 </div>
