@@ -1,10 +1,5 @@
 import logo from "../assets/Img/JXG_logo.png";
-import {
-  MdDashboard,
-  MdFeedback,
-  MdAdminPanelSettings,
-  MdAssignment,
-} from "react-icons/md";
+import { MdFeedback, MdAdminPanelSettings, MdAssignment } from "react-icons/md";
 import { IoIosPeople } from "react-icons/io";
 import { GiProgression, GiHamburgerMenu } from "react-icons/gi";
 import { TbReportSearch } from "react-icons/tb";
@@ -13,10 +8,9 @@ import { useState } from "react";
 import userImg from "../assets/Img/user.png";
 import { useEffect } from "react";
 import { MdSunny } from "react-icons/md";
-import { FaMoon } from "react-icons/fa";
+import { FaMoon, FaBell } from "react-icons/fa";
 
 const menuItems = [
-  { icon: MdDashboard, label: "Dashboard" },
   { icon: IoIosPeople, label: "Candidates" },
   { icon: MdAssignment, label: "Trainings" },
   { icon: GiProgression, label: "Progress" },
@@ -26,7 +20,7 @@ const menuItems = [
   { icon: MdAdminPanelSettings, label: "Admin" },
 ];
 
-const DefaultLayout = () => {
+const DefaultLayout = ({ children }) => {
   // Add this code snippet to the DefaultLayout component
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -70,13 +64,14 @@ const DefaultLayout = () => {
             }`}
           />
           <GiHamburgerMenu
-            className="h-8 w-8 ml-2 text-gray-600"
+            className="h-8 w-8 ml-2  text-CustomPurple"
             onClick={toggleMenu}
           />
         </div>
         <div className="h-auto">
           <ul className="flex flex-col items-center pt-10 px-7 space-y-10">
             {menuItems.map((item, index) => {
+              3;
               const IconComponent = item.icon;
               return (
                 <li key={index} className="flex items-center w-full">
@@ -87,7 +82,7 @@ const DefaultLayout = () => {
                       } text-gray-400 hover:text-black transition-all duration-700 cursor-pointer`}
                     />
                     <p
-                      className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-[600ms] cursor-pointer ${
+                      className={`text-xl font-semibold text-gray-400 hover:text-CustomPurple ml-7 transition-all duration-[600ms] cursor-pointer ${
                         menuOpen ? "opacity-0" : "opacity-100"
                       }`}
                       style={{
@@ -107,8 +102,8 @@ const DefaultLayout = () => {
         className={`px-3 flex-1 ${isDarkMode ? "dark" : ""} dark:bg-gray-900 `}
       >
         <header className=" shadow-md rounded-md py-3 px-12  mb-6 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-gray-700">Header</h1>
-          <div className="flex space-x-10">
+          <div></div>
+          <div className="flex space-x-10  items-center">
             <div className="flex items-center justify-center transition-colors duration-500">
               <label
                 htmlFor="toggle"
@@ -124,24 +119,25 @@ const DefaultLayout = () => {
                     onChange={toggleDarkMode}
                   />
                   {/* Switch */}
-                  <div className="block w-[73px] px-1 h-[34px] bg-gray-200 dark:bg-gray-600 rounded-full"></div>
+                  <div className="block w-[73px] px-1 h-[36px] bg-gray-200 dark:bg-gray-600 rounded-full"></div>
                   {/* Thumb */}
                   <div
-                    className={`absolute left-1 top-[2px] w-[30px] h-[30px] bg-white  rounded-full transition-transform duration-300 ${
+                    className={`absolute left-1 top-[3px] w-[30px] h-[30px] bg-white  rounded-full transition-transform duration-300 ${
                       isDarkMode ? "translate-x-[35px]" : "translate-x-0"
                     }`}
                   ></div>
                   {/* Icon */}
                   <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none">
                     {isDarkMode ? (
-                      <FaMoon className="h-6 w-6 mb-[2px] text-gray-900 ml-11" />
+                      <FaMoon className="h-6 w-6 mb-[2px] text-gray-900 ml-[42px]" />
                     ) : (
-                      <MdSunny className="h-6 w-6 text-yellow-400 dark:text-yellow-300 ml-2" />
+                      <MdSunny className="h-6 w-6 text-yellow-400 dark:text-yellow-300 ml-[6px]" />
                     )}
                   </div>
                 </div>
               </label>
             </div>
+            <FaBell className=" text-2xl text-CustomPurple cursor-pointer" />
             <img
               src={userImg}
               alt="user"
@@ -149,9 +145,7 @@ const DefaultLayout = () => {
             />
           </div>
         </header>
-        <section className="shadow-md rounded-md p-6">
-          <p className="text-gray-600">Main content goes here</p>
-        </section>
+        <section className="shadow-md rounded-md p-6">{children}</section>
       </div>
     </div>
   );
