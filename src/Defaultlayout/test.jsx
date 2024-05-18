@@ -22,7 +22,7 @@ const DefaultLayout = () => {
     <div className="border-2 border-red-600 w-full min-h-screen flex">
       <div className="border-2 border-red-600 min-h-screen w-96">
         <div className="border-2 border-red-600 h-20 flex px-8 cursor-pointer justify-between items-center">
-          <img src={logo} alt="logo.svg" className="h-10" />
+          <img src={logo} alt="logo.svg" className="h-10 ml-5" />
           <GiHamburgerMenu className="h-8 w-8" onClick={toggleMenu} />
         </div>
         <div className="border-4 border-blue-600 h-auto">
