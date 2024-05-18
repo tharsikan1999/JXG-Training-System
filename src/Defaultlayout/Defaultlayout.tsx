@@ -21,20 +21,20 @@ const DefaultLayout = () => {
   return (
     <div className="w-full min-h-screen flex bg-white">
       <div
-        className={` text-white min-h-screen shadow-lg transition-all duration-300 ease-in-out ${
+        className={` text-white min-h-screen shadow-lg transition-all duration-700 ease-in-out ${
           menuOpen ? "w-24" : "w-64"
         }`}
       >
-        <div className=" h-20 flex px-8 cursor-pointer justify-between items-center shadow-md">
+        <div className=" h-20 flex px-6 cursor-pointer justify-between items-center shadow-md">
           <img
             src={logo}
             alt="logo.svg"
-            className={`h-8 transition-all duration-300 ${
+            className={`h-8 transition-all duration-700 ${
               menuOpen ? " hidden" : " flex"
             }`}
           />
           <GiHamburgerMenu
-            className="h-8 w-8 text-gray-600"
+            className="h-8 w-8 ml-2 text-gray-600"
             onClick={toggleMenu}
           />
         </div>
@@ -44,11 +44,11 @@ const DefaultLayout = () => {
               <MdDashboard
                 className={`${
                   menuOpen ? "h-9 w-9" : "h-6 w-6"
-                } text-gray-400 hover:text-black transition-all duration-300 cursor-pointer `}
+                } text-gray-400 hover:text-black transition-all duration-700 cursor-pointer `}
               />
 
               <p
-                className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-300 cursor-pointer ${
+                className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-700 cursor-pointer ${
                   menuOpen ? " hidden" : " flex"
                 } `}
               >
@@ -59,11 +59,11 @@ const DefaultLayout = () => {
               <IoIosPeople
                 className={`${
                   menuOpen ? "h-9 w-9" : "h-6 w-6"
-                } text-gray-400 hover:text-black transition-all duration-300 cursor-pointer`}
+                } text-gray-400 hover:text-black transition-all duration-700 cursor-pointer`}
               />
               {!menuOpen && (
                 <p
-                  className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-300 cursor-pointer ${
+                  className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-700 cursor-pointer ${
                     menuOpen ? " hidden" : " flex"
                   } `}
                 >
@@ -75,11 +75,11 @@ const DefaultLayout = () => {
               <MdAssignment
                 className={`${
                   menuOpen ? "h-9 w-9" : "h-6 w-6"
-                } text-gray-400 hover:text-black transition-all duration-300 cursor-pointer`}
+                } text-gray-400 hover:text-black transition-all duration-700 cursor-pointer`}
               />
               {!menuOpen && (
                 <p
-                  className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-300 cursor-pointer ${
+                  className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-700 cursor-pointer ${
                     menuOpen ? " hidden" : " flex"
                   } `}
                 >
@@ -91,11 +91,11 @@ const DefaultLayout = () => {
               <GiProgression
                 className={`${
                   menuOpen ? "h-9 w-9" : "h-6 w-6"
-                } text-gray-400 hover:text-black transition-all duration-300 cursor-pointer`}
+                } text-gray-400 hover:text-black transition-all duration-700 cursor-pointer`}
               />
               {!menuOpen && (
                 <p
-                  className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-300 cursor-pointer ${
+                  className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-700 cursor-pointer ${
                     menuOpen ? " hidden" : " flex"
                   } `}
                 >
@@ -107,11 +107,11 @@ const DefaultLayout = () => {
               <MdFeedback
                 className={`${
                   menuOpen ? "h-9 w-9" : "h-6 w-6"
-                } text-gray-400 hover:text-black transition-all duration-300 cursor-pointer`}
+                } text-gray-400 hover:text-black transition-all duration-700 cursor-pointer`}
               />
               {!menuOpen && (
                 <p
-                  className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-300 cursor-pointer ${
+                  className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-700 cursor-pointer ${
                     menuOpen ? " hidden" : " flex"
                   } `}
                 >
@@ -123,11 +123,11 @@ const DefaultLayout = () => {
               <TbReportSearch
                 className={`${
                   menuOpen ? "h-9 w-9" : "h-6 w-6"
-                } text-gray-400 hover:text-black transition-all duration-300 cursor-pointer`}
+                } text-gray-400 hover:text-black transition-all duration-700 cursor-pointer`}
               />
               {!menuOpen && (
                 <p
-                  className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-300 cursor-pointer ${
+                  className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-700 cursor-pointer ${
                     menuOpen ? " hidden" : " flex"
                   } `}
                 >
@@ -139,11 +139,11 @@ const DefaultLayout = () => {
               <CgProfile
                 className={`${
                   menuOpen ? "h-9 w-9" : "h-6 w-6"
-                } text-gray-400 hover:text-black transition-all duration-300 cursor-pointer`}
+                } text-gray-400 hover:text-black transition-all duration-700 cursor-pointer`}
               />
               {!menuOpen && (
                 <p
-                  className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-300 cursor-pointer ${
+                  className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-700 cursor-pointer ${
                     menuOpen ? " hidden" : " flex"
                   } `}
                 >
@@ -155,11 +155,11 @@ const DefaultLayout = () => {
               <MdAdminPanelSettings
                 className={`${
                   menuOpen ? "h-9 w-9" : "h-6 w-6"
-                } text-gray-400 hover:text-black transition-all duration-300 cursor-pointer`}
+                } text-gray-400 hover:text-black transition-all duration-700 cursor-pointer`}
               />
               {!menuOpen && (
                 <p
-                  className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-300 cursor-pointer ${
+                  className={`text-xl font-semibold text-gray-400 hover:text-black ml-7 transition-all duration-700 cursor-pointer ${
                     menuOpen ? " hidden" : " flex"
                   } `}
                 >
