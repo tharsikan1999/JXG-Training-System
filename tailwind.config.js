@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         CustomPurple: "#7F63F4",
+        CustomGray: "#24303F",
       },
     },
   },
