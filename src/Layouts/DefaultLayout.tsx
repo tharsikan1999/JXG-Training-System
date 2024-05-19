@@ -77,7 +77,7 @@ const DefaultLayout = ({ children }: { children: ReactNode }) => {
               }`}
             />
             <GiHamburgerMenu
-              className="h-8 w-8 ml-2 text-CustomPurple"
+              className="h-8 w-8 ml-2 text-CYellow"
               onClick={toggleMenu}
             />
           </div>
@@ -95,21 +95,25 @@ const DefaultLayout = ({ children }: { children: ReactNode }) => {
                   >
                     <div
                       className={`h-[70px] w-2 rounded-tr-xl rounded-br-xl transition-all duration-[600ms] absolute left-0 ${
-                        isActive ? "bg-CustomPurple" : "hidden"
+                        isActive ? "bg-CYellow" : "hidden"
                       } ${menuOpen ? "hidden" : "flex"}`}
                     ></div>
                     <div className="flex items-center ml-5">
                       <IconComponent
-                        className={`${
+                        className={` ${
+                          isActive ? " text-gray-900 dark:text-CYellow" : ""
+                        } ${
                           menuOpen ? "h-9 w-9" : "h-6 w-6"
                         } text-gray-400  transition-all duration-700
-                      ${isActive ? " text-gray-900 dark:text-white" : ""}
-                      hover:text-CustomPurple`}
+                     
+                      hover:text-CYellow`}
                       />
                       <p
-                        className={`text-xl font-semibold text-gray-400 hover:text-CustomPurple ml-7 transition-all duration-[600ms] ${
+                        className={`text-xl font-semibold text-gray-400 hover:text-CYellow ml-7 transition-all duration-[600ms] ${
                           menuOpen ? "opacity-0" : "opacity-100"
-                        } ${isActive ? " text-gray-900 dark:text-white" : ""} `}
+                        } ${
+                          isActive ? " text-gray-900 dark:text-CYellow" : ""
+                        } `}
                         style={{
                           transitionDelay: `${index * 100}ms `,
                         }}
@@ -145,7 +149,7 @@ const DefaultLayout = ({ children }: { children: ReactNode }) => {
                     checked={isDarkMode}
                     onChange={toggleDarkMode}
                   />
-                  <div className="block w-14 px-1 h-7 bg-gray-200 dark:bg-CustomPurple rounded-full"></div>
+                  <div className="block w-14 px-1 h-7 bg-gray-200 dark:bg-CYellow rounded-full"></div>
                   <div
                     className={`absolute left-1 top-1 w-[23px] h-[23px] -translate-y-[1.8px] bg-white rounded-full transition-transform duration-300 ${
                       isDarkMode ? "translate-x-[27px]" : "translate-x-0"
@@ -161,7 +165,7 @@ const DefaultLayout = ({ children }: { children: ReactNode }) => {
                 </div>
               </label>
             </div>
-            <FaBell className="text-2xl text-CustomPurple cursor-pointer" />
+            <FaBell className="text-2xl text-CYellow cursor-pointer" />
             <img
               src={userImg}
               alt="user"

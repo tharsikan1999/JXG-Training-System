@@ -14,7 +14,7 @@ const Home = () => {
         <button
           onClick={() => navigate("/candidates")}
           type="button"
-          className="text-white bg-gradient-to-br from-CustomYellow to-orange-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg text-xl mr-5 font-semibold px-8 h-12 text-center transition-transform duration-300 ease-in-out transform hover:scale-110"
+          className="text-white bg-yellow-500 bg-gradient-to-br first-line: from-CYellow to-orange-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg text-xl mr-5 font-semibold px-8 h-12 text-center transition-transform duration-300 ease-in-out transform hover:scale-110"
         >
           Login
         </button>
