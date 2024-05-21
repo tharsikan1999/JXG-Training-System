@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     // Simulating a delay to demonstrate loading
     setTimeout(() => {
@@ -16,51 +17,30 @@ const Home = () => {
       // Additional cleanup if needed
     };
   }, []);
+
   const navigate = useNavigate();
+
   return (
-<<<<<<< HEAD
     <div className="bg-background-img min-h-screen w-full bg-center bg-no-repeat bg-cover">
-      <div className="h-20 flex justify-between items-center">
-        <img
-          src={Logo}
-          alt="JXG Logo"
-          className="m-3 h-10 cursor-pointer  ease-in-out transform hover:scale-110 transition-all duration-700  "
-        />
-        <button
-          onClick={() => navigate("/login")}
-          type="button"
-          className="text-white bg-yellow-500 bg-gradient-to-br first-line: from-CYellow to-orange-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg text-xl mr-5 font-semibold px-8 h-12 text-center transition-transform duration-300 ease-in-out transform hover:scale-110"
-        >
-          Login
-        </button>
-      </div>
-    </div>
-=======
-    <>
       {loading ? (
         <Loader />
       ) : (
-        <>
-          <div className="bg-background-img min-h-screen w-full bg-center bg-no-repeat bg-cover">
-            <div className="h-20 flex justify-between items-center">
-              <img
-                src={Logo}
-                alt="JXG Logo"
-                className="m-3 h-10 cursor-pointer  ease-in-out transform hover:scale-110 transition-all duration-700  "
-              />
-              <button
-                onClick={() => navigate("/candidates")}
-                type="button"
-                className="text-white bg-yellow-500 bg-gradient-to-br first-line: from-CustomYellow to-orange-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg text-xl mr-5 font-semibold px-8 h-12 text-center transition-transform duration-300 ease-in-out transform hover:scale-110"
-              >
-                Login
-              </button>
-            </div>
-          </div>
-        </>
+        <div className="h-20 flex justify-between items-center">
+          <img
+            src={Logo}
+            alt="JXG Logo"
+            className="m-3 h-10 cursor-pointer ease-in-out transform hover:scale-110 transition-all duration-700"
+          />
+          <button
+            onClick={() => navigate("/candidates")}
+            type="button"
+            className="text-white bg-yellow-500 bg-gradient-to-br from-CustomYellow to-orange-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg text-xl mr-5 font-semibold px-8 h-12 text-center transition-transform duration-300 ease-in-out transform hover:scale-110"
+          >
+            Login
+          </button>
+        </div>
       )}
-    </>
->>>>>>> 2c68e00b22bacfea227ed48a6553a93f810fbee8
+    </div>
   );
 };
 
