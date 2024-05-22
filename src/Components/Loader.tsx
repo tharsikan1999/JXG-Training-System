@@ -12,6 +12,9 @@ function Loader() {
       chars.forEach((char, index) => {
         char.style.opacity = "0"; // Reset opacity
         char.style.animation = "none"; // Reset animation
+        // Trigger reflow to restart animation
+        void char.offsetWidth;
+
         setTimeout(() => {
           char.style.opacity = "1"; // Set opacity to trigger animation
           char.style.animation = "slideIn 0.4s ease forwards"; // Apply animation
@@ -23,7 +26,7 @@ function Loader() {
     resetAnimation();
 
     // Reset the animation continuously
-    const interval = setInterval(resetAnimation, 1600); // Adjust the delay as needed
+    const interval = setInterval(resetAnimation, 1600);
 
     // Clean up function
     return () => clearInterval(interval);
@@ -39,7 +42,7 @@ function Loader() {
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(85, 87, 83,0.5); /* semi-transparent white overlay */
+            background-color: rgba(85, 87, 83, 0.5); /* semi-transparent white overlay */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -53,7 +56,6 @@ function Loader() {
           .char {
             display: inline-block;
             opacity: 0; /* Initially hide each character */
-            animation: slideIn 0.1s ease forwards; /* Apply animation */
           }
 
           @keyframes slideIn {

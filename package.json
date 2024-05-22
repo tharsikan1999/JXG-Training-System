@@ -16,6 +16,7 @@
     "react-icons": "^5.2.1",
     "react-paginate": "^8.2.0",
     "react-table": "^7.8.0",
+    "styled-components": "^6.1.11",
     "tw-elements-react": "^1.0.0-alpha2"
   },
   "devDependencies": {

@@ -18,21 +18,24 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Show loading spinner until the window has fully loaded
-    window.onload = () => {
+    const handleLoad = () => {
       setLoading(false);
     };
 
+    // Attach event listener
+    window.addEventListener("load", handleLoad);
+
     // Cleanup function to remove the event listener
     return () => {
-      window.onload = null;
+      window.removeEventListener("load", handleLoad);
     };
   }, []);
 
   return (
     <>
-      {loading && <Loader />}
-      {!loading && (
+      {loading ? (
+        <Loader />
+      ) : (
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
