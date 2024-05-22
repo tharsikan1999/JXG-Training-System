@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import JImage from "../assets/Img/Loading Img/J.png";
 import XImage from "../assets/Img/Loading Img/X.png";
 import GImage from "../assets/Img/Loading Img/G.png";
@@ -39,7 +39,7 @@ function Loader() {
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(255, 255, 255, 0.7); /* semi-transparent white overlay */
+            background-color: rgba(85, 87, 83,0.5); /* semi-transparent white overlay */
             display: flex;
             align-items: center;
             justify-content: center;

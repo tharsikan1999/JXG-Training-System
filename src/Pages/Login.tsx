@@ -18,10 +18,11 @@ export default function Login() {
           <h3 className="text-center mb-6 text-lg font-semibold text-gray-600">
             Welcome Back! Please enter your details
           </h3>
+
           <div className="flex flex-col py-2">
             <label className=" font-semibold text-gray-500 mb-2">Email</label>
             <input
-              className="border p-2 rounded"
+              className="border p-2 rounded-lg "
               type="text"
               placeholder="Enter your email"
             />
@@ -30,16 +31,16 @@ export default function Login() {
             <label className=" font-semibold text-gray-500 mb-2">
               Password
             </label>
-            <input className="border p-2 rounded" type="password" />
+            <input className="border p-2 rounded-lg " type="password" />
           </div>
           <div className="flex justify-between mt-2 ">
-            <p className="flex items-center font-semibold text-gray-800 ">
+            <p className="flex items-center font-semibold text-gray-700 cursor-pointer ">
               <input className="mr-2" type="checkbox" />
               Remember me
             </p>
             <a
               href="/forgot-password"
-              className="text-indigo-600 hover:underline"
+              className="text-indigo-500 font-semibold hover:underline cursor-pointer"
             >
               Forgot password
             </a>
@@ -55,7 +56,7 @@ export default function Login() {
         </form>
       </div>
       {/*image container*/}
-      <div className="hidden sm:block ">
+      <div className="hidden sm:block  ">
         <img
           className="w-full h-screen object-cover bg-no-repeat bg-center bg-cover"
           src={login}
