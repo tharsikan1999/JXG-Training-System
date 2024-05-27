@@ -13,6 +13,9 @@ import DefaultLayout from "./Layouts/DefaultLayout";
 import Home from "./Pages/Home";
 import Loader from "./Components/Loader";
 import { useEffect, useState } from "react";
+import ForgotPassword from "./Pages/ForgotPassword";
+import ResetPassword from "./Pages/ResetPassword";
+import NotFound from "./Pages/NotFound";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -73,6 +76,45 @@ const App = () => {
           </Routes>
         </Router>
       )}
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/candidates"
+            element={<DefaultLayout children={<Candidates />} />}
+          />
+          <Route
+            path="/trainings"
+            element={<DefaultLayout children={<Trainings />} />}
+          />
+          <Route
+            path="/progress"
+            element={<DefaultLayout children={<Progress />} />}
+          />
+          <Route
+            path="/feedback"
+            element={<DefaultLayout children={<Feedback />} />}
+          />
+          <Route
+            path="/reports"
+            element={<DefaultLayout children={<Reports />} />}
+          />
+          <Route
+            path="/profile"
+            element={<DefaultLayout children={<Profile />} />}
+          />
+          <Route
+            path="/admin"
+            element={<DefaultLayout children={<Admin />} />}
+          />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/learn" element={<Learn />} />
+          <Route path="/forgotpassword" element={<ForgotPassword/>} />
+          <Route path="/resetpassword" element={<ResetPassword/>} />
+          <Route path="/notfound" element={<NotFound/>} />
+        </Routes>
+      </Router>
     </>
   );
 };

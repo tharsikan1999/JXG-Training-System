@@ -1,68 +1,31 @@
-import login from "../assets/Img/login.png";
-import { useNavigate } from "react-router-dom";
-import logo from "../assets/Img/JXG.png";
+import React from "react";
+import login from '../assets/Img/login.png';
 
-export default function Login() {
-  const navigate = useNavigate();
+export default function Login(){
   return (
     <div className="grid grid-cols-2 sm-grid-cols-2 h-screen w-full">
       {/*form container*/}
       <div className="bg-white-100 flex flex-col w-full items-center justify-center">
-        <form className="max-w-md w-full max-auto bg-white p-8 items-center ">
-          <div
-            onClick={() => navigate("/")}
-            className=" cursor-pointer  flex justify-center items-center mb-3"
-          >
-            <img src={logo} alt="jxg logo" className=" h-16 mb-6" />
-          </div>
-          <h3 className="text-center mb-6 text-lg font-semibold text-gray-600">
-            Welcome Back! Please enter your details
-          </h3>
-
+        <form className="max-w-md w-full max-auto bg-white p-8 items-center">
+          <h2 className="text-4xl font-bold text-center py-6">Welcome Back</h2>
+          <h3 className="text-center mb-4">Welcome Back! Please enter your details</h3>
           <div className="flex flex-col py-2">
-            <label className=" font-semibold text-gray-500 mb-2">Email</label>
-            <input
-              className="border p-2 rounded-lg "
-              type="text"
-              placeholder="Enter your email"
-            />
+            <label>Email</label><input className="border p-2 rounded" type="text" placeholder="Enter your email"/>
           </div>
           <div className="flex flex-col py-2 ">
-            <label className=" font-semibold text-gray-500 mb-2">
-              Password
-            </label>
-            <input className="border p-2 rounded-lg " type="password" />
+            <label>Password</label><input className="border p-2 rounded" type="password"/>
           </div>
-          <div className="flex justify-between mt-2 ">
-            <p className="flex items-center font-semibold text-gray-700 cursor-pointer ">
-              <input className="mr-2" type="checkbox" />
-              Remember me
-            </p>
-            <a
-              href="/forgot-password"
-              className="text-indigo-500 font-semibold hover:underline cursor-pointer"
-            >
-              Forgot password
-            </a>
+          <div className="flex justify-between ">
+            <p className="flex items-center "><input className="mr-2" type="checkbox"/>Remember me</p>
+            <a href="/forgot-password" className="text-indigo-600 hover:underline">Forgot password</a>
           </div>
-
-          <button
-            onClick={() => navigate("/candidates")}
-            type="button"
-            className="text-white bg-yellow-500 w-full  mt-5 bg-gradient-to-br from-CustomYellow to-orange-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-lg text-xl mr-5 font-semibold px-8 h-12 text-center transition-transform duration-300 ease-in-out transform hover:scale-110"
-          >
-            Sign{" "}
-          </button>
+          <button className="inline-block rounded border w-full my-5 py-2 bg-indigo-600 hover:bg-indigo-500 text-white">Sign In</button>
         </form>
       </div>
       {/*image container*/}
-      <div className="hidden sm:block  ">
-        <img
-          className="w-full h-screen object-cover bg-no-repeat bg-center bg-cover"
-          src={login}
-        />
+      <div className="hidden sm:block">
+        <img className="w-full h-screen object-cover" src={login}/>
       </div>
     </div>
-  );
+  )
 }
- 
