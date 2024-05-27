@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 export default function NotFound() {
   const navigate = useNavigate();
   return (
-    <div className="grid grid-cols-2 sm-grid-cols-2 h-screen w-full">
-      <div className="bg-white-100 flex flex-col items-center justify-center">
+    <div className="grid grid-cols-2 bg-white-100  sm-grid-cols-2 h-screen w-full">
+      <div className=" flex flex-col items-center justify-center">
         <div
           onClick={() => navigate("/")}
           className=" cursor-pointer  flex justify-center items-center "
