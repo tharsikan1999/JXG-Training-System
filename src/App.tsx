@@ -11,46 +11,68 @@ import Reports from "./Pages/Reports";
 import Profile from "./Pages/Profile";
 import DefaultLayout from "./Layouts/DefaultLayout";
 import Home from "./Pages/Home";
+import Loader from "./Components/Loader";
+import { useEffect, useState } from "react";
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const handleLoad = () => {
+      setLoading(false);
+    };
+
+    // Attach event listener
+    window.addEventListener("load", handleLoad);
+
+    // Cleanup function to remove the event listener
+    return () => {
+      window.removeEventListener("load", handleLoad);
+    };
+  }, []);
+
   return (
     <>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/candidates"
-            element={<DefaultLayout children={<Candidates />} />}
-          />
-          <Route
-            path="/trainings"
-            element={<DefaultLayout children={<Trainings />} />}
-          />
-          <Route
-            path="/progress"
-            element={<DefaultLayout children={<Progress />} />}
-          />
-          <Route
-            path="/feedback"
-            element={<DefaultLayout children={<Feedback />} />}
-          />
-          <Route
-            path="/reports"
-            element={<DefaultLayout children={<Reports />} />}
-          />
-          <Route
-            path="/profile"
-            element={<DefaultLayout children={<Profile />} />}
-          />
-          <Route
-            path="/admin"
-            element={<DefaultLayout children={<Admin />} />}
-          />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/learn" element={<Learn />} />
-        </Routes>
-      </Router>
+      {loading ? (
+        <Loader />
+      ) : (
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/candidates"
+              element={<DefaultLayout children={<Candidates />} />}
+            />
+            <Route
+              path="/trainings"
+              element={<DefaultLayout children={<Trainings />} />}
+            />
+            <Route
+              path="/progress"
+              element={<DefaultLayout children={<Progress />} />}
+            />
+            <Route
+              path="/feedback"
+              element={<DefaultLayout children={<Feedback />} />}
+            />
+            <Route
+              path="/reports"
+              element={<DefaultLayout children={<Reports />} />}
+            />
+            <Route
+              path="/profile"
+              element={<DefaultLayout children={<Profile />} />}
+            />
+            <Route
+              path="/admin"
+              element={<DefaultLayout children={<Admin />} />}
+            />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/learn" element={<Learn />} />
+          </Routes>
+        </Router>
+      )}
     </>
   );
 };
