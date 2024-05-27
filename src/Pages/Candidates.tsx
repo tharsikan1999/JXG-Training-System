@@ -1,9 +1,9 @@
-import Table from "../Components/Table";
+import CandidatesTable from "../Components/Tables/CandidatesTable";
 
 const Candidates = () => {
   return (
-    <div>
-      <Table />
+    <div className=" scroll-auto overflow-scroll">
+      <CandidatesTable />
     </div>
   );
 };
