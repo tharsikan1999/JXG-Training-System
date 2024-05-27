@@ -73,48 +73,12 @@ const App = () => {
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/learn" element={<Learn />} />
+            <Route path="/forgot_password" element={<ForgotPassword />} />
+            <Route path="/reset_password" element={<ResetPassword />} />
+            <Route path="/*" element={<NotFound />} />
           </Routes>
         </Router>
       )}
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/candidates"
-            element={<DefaultLayout children={<Candidates />} />}
-          />
-          <Route
-            path="/trainings"
-            element={<DefaultLayout children={<Trainings />} />}
-          />
-          <Route
-            path="/progress"
-            element={<DefaultLayout children={<Progress />} />}
-          />
-          <Route
-            path="/feedback"
-            element={<DefaultLayout children={<Feedback />} />}
-          />
-          <Route
-            path="/reports"
-            element={<DefaultLayout children={<Reports />} />}
-          />
-          <Route
-            path="/profile"
-            element={<DefaultLayout children={<Profile />} />}
-          />
-          <Route
-            path="/admin"
-            element={<DefaultLayout children={<Admin />} />}
-          />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/learn" element={<Learn />} />
-          <Route path="/forgotpassword" element={<ForgotPassword/>} />
-          <Route path="/resetpassword" element={<ResetPassword/>} />
-          <Route path="/notfound" element={<NotFound/>} />
-        </Routes>
-      </Router>
     </>
   );
 };
