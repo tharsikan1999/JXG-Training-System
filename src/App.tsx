@@ -11,34 +11,16 @@ import Reports from "./Pages/Reports";
 import Profile from "./Pages/Profile";
 import DefaultLayout from "./Layouts/DefaultLayout";
 import Home from "./Pages/Home";
-import Loader from "./Components/Loader";
-import { useEffect, useState } from "react";
 import ForgotPassword from "./Pages/ForgotPassword";
 import ResetPassword from "./Pages/ResetPassword";
 import NotFound from "./Pages/NotFound";
+import ChangePassword from "./Pages/ChangePassword";
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const handleLoad = () => {
-      setLoading(false);
-    };
-
-    // Attach event listener
-    window.addEventListener("load", handleLoad);
-
-    // Cleanup function to remove the event listener
-    return () => {
-      window.removeEventListener("load", handleLoad);
-    };
-  }, []);
-
+  
   return (
     <>
-      {loading ? (
-        <Loader />
-      ) : (
+     
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -76,9 +58,10 @@ const App = () => {
             <Route path="/forgot_password" element={<ForgotPassword />} />
             <Route path="/reset_password" element={<ResetPassword />} />
             <Route path="/*" element={<NotFound />} />
+            <Route path="/change_password" element={<ChangePassword />}/>
           </Routes>
         </Router>
-      )}
+      
     </>
   );
 };
