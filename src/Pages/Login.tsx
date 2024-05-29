@@ -40,8 +40,7 @@ export default function Login() {
             </p>
             <p
               onClick={() => navigate("/forgot_password")}
-              className="text-indigo-500 font-semibold hover:underline cursor-pointer"
-            >
+              className="text-indigo-500 font-semibold hover:underline cursor-pointer">
               Forgot password
             </p>
           </div>
