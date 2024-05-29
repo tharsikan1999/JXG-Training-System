@@ -1,5 +1,10 @@
+
 const Trainings = () => {
-  return <div>Trainings</div>;
+  return (
+    <div>
+
+    </div>
+  );
 };
 
 export default Trainings;
