@@ -2,14 +2,14 @@
 const SearchBar =() =>{
     return(
         <div className="mb-3 xl:w-96">
-            <div className="relative mb-4 flex w-full flex-wrap items-stretch">
+            <div className="relative mb-1 flex w-full flex-wrap items-stretch">
                 <input
                     type="search"
                         className="relative m-0 block 
-                                flex-auto rounded-full 
+                                flex-auto rounded-full
                                 border border-solid border-amber-300 
                                 bg-transparent bg-clip-padding px-4 py-[0.25rem] 
-                                text-base font-normal leading-[1.6] text-gray-500 
+                                text-base font-normal leading-[1.4] text-gray-500 
                                 outline-none transition duration-200 ease-in-out 
                                 focus:z-[3] focus:border-amber-400 focus:text-gray-500 
                                 focus:shadow-[inset_0_0_0_1px_rgb(248,208,91)] focus:outline-none 

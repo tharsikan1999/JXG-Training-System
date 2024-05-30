@@ -1,8 +1,7 @@
-import { useState, useRef } from 'react';
 import { useNavigate } from "react-router-dom";
 import user from "../assets/Img/user.png";
 import ChangePassword from './ChangePassword';
-import axios from 'axios';
+
 
 
 const Profile = () => {
