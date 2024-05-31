@@ -15,6 +15,7 @@ import ForgotPassword from "./Pages/ForgotPassword";
 import ResetPassword from "./Pages/ResetPassword";
 import NotFound from "./Pages/NotFound";
 import ChangePassword from "./Pages/ChangePassword";
+import CreateTraining from "./Pages/CreateTraining";
 
 const App = () => {
   
@@ -52,6 +53,10 @@ const App = () => {
               path="/admin"
               element={<DefaultLayout children={<Admin />} />}
             />
+            <Route
+              path="/create_training"
+              element={<DefaultLayout children={<CreateTraining />} />}
+            />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/learn" element={<Learn />} />
@@ -59,6 +64,7 @@ const App = () => {
             <Route path="/reset_password" element={<ResetPassword />} />
             <Route path="/*" element={<NotFound />} />
             <Route path="/change_password" element={<ChangePassword />}/>
+            <Route path="/create_training" element={<CreateTraining />}/>
           </Routes>
         </Router>
       

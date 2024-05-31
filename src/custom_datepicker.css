@@ -1,0 +1,12 @@
+/* custom_datepicker.css */
+
+.react-datepicker__day--selected, 
+.react-datepicker__day--selected:hover, 
+.react-datepicker__day--keyboard-selected {
+  background-color: #facc15; /* Use Tailwind's yellow-400 color */
+  color: #000; /* Ensure text color is black for readability */
+}
+
+.react-datepicker__day:hover {
+  background-color: #f6e271e0; /* Use Tailwind's blue-200 color for hover */
+}

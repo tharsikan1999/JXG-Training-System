@@ -1,5 +1,6 @@
-
+import { useNavigate } from "react-router-dom";
 const ChangePassword = () => {
+    const navigate = useNavigate();
     return (
         <div>
             <h2 className="text-lg font-semibold py-4">Change Password</h2>
@@ -19,11 +20,13 @@ const ChangePassword = () => {
                     <input className="border p-2 rounded-lg " type="password" />
                     <div className="pt-6 pl-4">
                     <button
+                        onClick={() => navigate("/*")}
+                        type="button"
                         className="text-white bg-CustomYellow
                          px-10 py-2 focus:outline-none rounded-lg 
                          text-sm mr-5 font-semibold text-center 
                          transition-transform duration-300 ease-in-out transform hover:scale-105">
-                        Change Password{" "}
+                    Change Password{" "}
                     </button>
                     </div>
                 </div>
