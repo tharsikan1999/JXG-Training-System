@@ -1,5 +1,6 @@
 import SearchBar from "../Components/SearchBar";
 import SortBar from "../Components/Sorting bars/SortBar";
+import TrainingTable from "../Components/Tables/TrainingTable";
 const Trainings = () => {
   return (
     <div>
@@ -13,7 +14,11 @@ const Trainings = () => {
                           transition-transform duration-300 ease-in-out transform hover:scale-105">
                           Change Password{" "}
           </button>
+          
       </div>
+      <div className=" scroll-auto overflow-scroll">
+            <TrainingTable />
+          </div>
       
     </div>
   );
