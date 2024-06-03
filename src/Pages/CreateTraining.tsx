@@ -1,8 +1,10 @@
+import React from "react";
+import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { TEInput } from "tw-elements-react";
 import Calender from "../Components/Calender";
 import Dropdown from "../Components/Dropdown";
-import { useState } from 'react';
-import React from "react";
+
 
 const CreateTraining = () => {
   const [formData, setFormData] = useState({
@@ -36,8 +38,7 @@ const CreateTraining = () => {
       trainingType: value,
     }));
   };
-  
-
+  const navigate = useNavigate();
   return (
     <div className="p-4">
       <form>
@@ -200,6 +201,26 @@ const CreateTraining = () => {
             onChange={handleChange}
             placeholder="Admin Instructions"
           />
+        </div>
+        <div className="flex justify-end mt-6">
+            <button
+                onClick={() => navigate("/*")}
+                type="button"
+                className="text-white bg-CustomYellow
+                px-4 py-2 my-3 focus:outline-none rounded-lg 
+                text-sm font-semibold text-center 
+                transition-transform duration-300 ease-in-out transform hover:scale-105">
+                Create Assessment{" "}
+            </button>
+            <button
+                onClick={() => navigate("/*")}
+                type="button"
+                className="text-white bg-CustomYellow ml-5
+                px-4 py-2 my-3 mr-28 focus:outline-none rounded-lg 
+                text-sm font-semibold text-center 
+                transition-transform duration-300 ease-in-out transform hover:scale-105">
+                Schedule Training{" "}
+            </button>
         </div>
       </form>
     </div>
