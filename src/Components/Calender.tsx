@@ -8,7 +8,6 @@ const Calender =() =>{
     return(
         <div>
             <div>
-                <h2>Select a date</h2>
                 <DatePicker selected={startDate} onChange={(date:Date)=>setStartDate(date)}
                 className="border border-gray-300 p-1 rounded-md shadow-sm 
                 focus:outline-none focus:ring-2 focus:ring-amber-500"
