@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { TEInput } from "tw-elements-react";
+import '../index.css'
 import Calender from "../Components/Calender";
 import Dropdown from "../Components/Dropdown";
 
@@ -42,7 +43,7 @@ const CreateTraining = () => {
   return (
     <div className="p-4">
       <form>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {/* Column 1 */}
           <div className="mt-1">
             <div className="mb-4 mx-28">
