@@ -17,6 +17,7 @@ import NotFound from "./Pages/NotFound";
 import ChangePassword from "./Pages/ChangePassword";
 import CreateTraining from "./Pages/CreateTraining";
 import Assessment from "./Pages/Assessment";
+import CreateAssessment from "./Pages/CreateAssessment";
 
 const App = () => {
   
@@ -62,6 +63,10 @@ const App = () => {
               path="/assessment"
               element={<DefaultLayout children={<Assessment />} />}
             />
+            <Route
+              path="/create_assessment"
+              element={<DefaultLayout children={<CreateAssessment />} />}
+            />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/learn" element={<Learn />} />
@@ -70,7 +75,6 @@ const App = () => {
             <Route path="/*" element={<NotFound />} />
             <Route path="/change_password" element={<ChangePassword />}/>
             <Route path="/create_training" element={<CreateTraining />}/>
-            <Route path="/assessment" element={<Assessment />}/>
           </Routes>
         </Router>
       
