@@ -1,8 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import SearchBar from "../Components/SearchBar";
 import SortBar from "../Components/Sorting bars/SortBar";
 import TrainingTable from "../Components/Tables/TrainingTable";
-import CreateTraining from "./CreateTraining";
-import { useNavigate } from "react-router-dom";
+
 
 const Trainings = () => {
   const navigate = useNavigate();
@@ -10,7 +10,9 @@ const Trainings = () => {
     <div>
       <div className="grid grid-cols-3 gap-2">
         <div>
-          <SearchBar/>
+          {/**this should be modified 
+          <SearchBar onSearch={handleSearch}/>
+          */}
         </div>
         <div>
           <SortBar/>

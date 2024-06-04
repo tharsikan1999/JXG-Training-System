@@ -5,6 +5,8 @@ import { TEInput } from "tw-elements-react";
 import '../index.css'
 import Calender from "../Components/Calender";
 import Dropdown from "../Components/Dropdown";
+import SearchBar from "../Components/SearchBar";
+import Assessment from "./Assessment";
 
 
 const CreateTraining = () => {
@@ -203,9 +205,17 @@ const CreateTraining = () => {
             placeholder="Admin Instructions"
           />
         </div>
-        <div className="flex justify-end mt-6">
+        <div>
+          <div>
+          <h2>Candidates :</h2>
+          </div>
+          
+          {/*<SearchBar onSearch={handleSearch}/></div>*/}
+        </div>
+        <div className="flex justify-end mt-6">          
+            {/**this is only linked for now */}
             <button
-                onClick={() => navigate("/*")}
+                onClick={() => navigate("/assessment")}
                 type="button"
                 className="text-white bg-CustomYellow
                 px-4 py-2 my-3 focus:outline-none rounded-lg 
