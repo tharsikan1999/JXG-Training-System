@@ -19,6 +19,7 @@ import CreateTraining from "./Pages/CreateTraining";
 import Assessment from "./Pages/Assessment";
 import CreateAssessment from "./Pages/CreateAssessment";
 import AttendanceConf from "./Pages/AttendanceConf";
+import AddCandidate from "./Pages/AddCandidate";
 
 const App = () => {
   
@@ -67,6 +68,10 @@ const App = () => {
             <Route
               path="/create_assessment"
               element={<DefaultLayout children={<CreateAssessment />} />}
+            />
+            <Route 
+              path="/add_candidate"
+              element={<DefaultLayout children={<AddCandidate />}/>}
             />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />

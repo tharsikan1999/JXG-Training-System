@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import CandidatesTable from "../Components/Tables/CandidatesTable";
+import AddCandidate from "./AddCandidate";
 
 const Candidates = () => {
   const navigate = useNavigate();
@@ -7,7 +8,7 @@ const Candidates = () => {
     <div>
       <div className="flex justify-end ">
         <button
-              onClick={() => navigate("/assessment")}
+              onClick={() => navigate("/add_candidate")}
               type="button"
               className="text-white bg-CustomYellow
               px-4 py-2 my-3 focus:outline-none rounded-lg 
