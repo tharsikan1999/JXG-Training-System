@@ -10,6 +10,9 @@ import Assessment from "./Assessment";
 
 
 const CreateTraining = () => {
+  const handleSearch = (query: string)=>{
+    console.log('Search query:', query);
+  };
   const [formData, setFormData] = useState({
     status: '',
     startDate: '',
@@ -206,8 +209,9 @@ const CreateTraining = () => {
           />
         </div>
         <div>
-          <div>
-          <h2>Candidates :</h2>
+          <div className="flex mt-4 mx-28">
+          <h2 className="mr-4">Candidates :</h2>
+          <SearchBar onSearch={handleSearch}/>
           </div>
           
           {/*<SearchBar onSearch={handleSearch}/></div>*/}

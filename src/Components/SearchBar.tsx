@@ -22,7 +22,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   };
 
   return (
-    <div className="flex justify-center">
+    <div className="flex">
       <form onSubmit={handleSearch} className="w-48 max-w-md">
         <div className="flex items-center rounded-full border border-CustomYellow">
           <input

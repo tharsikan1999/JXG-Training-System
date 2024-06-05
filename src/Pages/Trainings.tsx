@@ -6,16 +6,18 @@ import TrainingTable from "../Components/Tables/TrainingTable";
 
 const Trainings = () => {
   const navigate = useNavigate();
+  const handleSearch = (query: string)=>{
+    console.log('Search query:', query);
+  };
   return (
     <div>
       <div className="grid grid-cols-3 gap-2">
         <div>
-          {/**this should be modified 
           <SearchBar onSearch={handleSearch}/>
-          */}
+          
         </div>
         <div>
-          <SortBar/>
+          <SortBar />
         </div>
         <div className="sm:place-self-end">
         <button

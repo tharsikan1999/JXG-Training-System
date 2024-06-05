@@ -7,7 +7,16 @@ const CreateAssessment=()=>{
     const [formData, setFormData] = useState({
         assessmentName: '',
         assessmentDescription:'',
-        question:'',
+        question1:'',
+        answer1: '',
+        answer2: '',
+        answer3: '',
+        answer4: '',
+        question2:'',
+        answer2_1: '',
+        answer2_2: '',
+        answer2_3: '',
+        answer2_4: '',
     });
     const handleChange =(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>{
         const {name,value} = e.target;
@@ -20,33 +29,117 @@ const CreateAssessment=()=>{
         <div>
             <div className="mt-4 mx-28">
                 <textarea
-                    className="border border-gray-300 p-1 w-full rounded-md shadow-sm 
+                    className="border border-amber-300 p-1 w-full rounded-md shadow-sm 
                     focus:outline-none focus:ring-2 focus:ring-amber-500"
-                    name="trainingName"
+                    name="assessmentName"
                     value={formData.assessmentName}
                     onChange={handleChange}
                     placeholder="Assessment Name"/>
             </div>
             <div className="mt-4 mx-28">
                 <textarea
-                    className="border border-gray-300 p-1 w-full rounded-md shadow-sm 
+                    className="border border-amber-300 p-1 w-full rounded-md shadow-sm 
                     focus:outline-none focus:ring-2 focus:ring-amber-500"
-                    name="trainingDescription"
+                    name="assessmentDescription"
                     value={formData.assessmentDescription}
                     onChange={handleChange}
                     placeholder="Assessment Description"/>
             </div>
             <div className="mt-4 mx-28">
                 <textarea
-                    className="border border-gray-300 p-1 w-full h-auto rounded-md shadow-sm 
+                    className="border border-amber-300 p-1 w-full h-auto rounded-md shadow-sm 
                     focus:outline-none focus:ring-2 focus:ring-amber-500"
-                    name="trainingDescription"
-                    value={formData.assessmentDescription}
+                    name="question1"
+                    value={formData.question1}
                     onChange={handleChange}
-                    placeholder="Question 01
-                    Q1
-                    Q2
-                    Q3"/>
+                    placeholder="Question 01"
+                />
+                <div className="grid grid-rows-2 grid-flow-col gap-4 mt-2 ">
+                    <input
+                        className="border border-gray-300 p-1 rounded-md shadow-md 
+                        focus:outline-none focus:ring-2 focus:ring-amber-500"
+                        type="text"
+                        name="answer1"
+                        value={formData.answer1}
+                        onChange={handleChange}
+                        placeholder="Answer 1"
+                    />
+                    <input
+                            className="border border-gray-300 p-1 rounded-md shadow-md
+                            focus:outline-none focus:ring-2 focus:ring-amber-500"
+                            type="text"
+                            name="answer2"
+                            value={formData.answer2}
+                            onChange={handleChange}
+                            placeholder="Answer 2"
+                    />
+                    <input
+                            className="border border-gray-300 p-1 rounded-md shadow-md 
+                            focus:outline-none focus:ring-2 focus:ring-amber-500"
+                            type="text"
+                            name="answer3"
+                            value={formData.answer3}
+                            onChange={handleChange}
+                            placeholder="Answer 3"
+                    />
+                    <input
+                        className="border border-gray-300 p-1 rounded-md shadow-md 
+                        focus:outline-none focus:ring-2 focus:ring-amber-500"
+                        type="text"
+                        name="answer4"
+                        value={formData.answer4}
+                        onChange={handleChange}
+                        placeholder="Answer 4"
+                    />
+                </div>   
+            </div>
+            <div className="mt-6 mx-28">
+                <textarea
+                    className="border border-amber-300 p-1 w-full h-auto rounded-md shadow-sm 
+                    focus:outline-none focus:ring-2 focus:ring-amber-500"
+                    name="question2"
+                    value={formData.question2}
+                    onChange={handleChange}
+                    placeholder="Question 02"
+                />
+                <div className="grid grid-rows-2 grid-flow-col gap-4 mt-2">
+                    <input
+                        className="border border-gray-300 p-1 rounded-md shadow-md 
+                        focus:outline-none focus:ring-2 focus:ring-amber-500"
+                        type="text"
+                        name="answer2_1"
+                        value={formData.answer2_1}
+                        onChange={handleChange}
+                        placeholder="Answer 1"
+                    />
+                    <input
+                            className="border border-gray-300 p-1 rounded-md shadow-md
+                            focus:outline-none focus:ring-2 focus:ring-amber-500"
+                            type="text"
+                            name="answer2_2"
+                            value={formData.answer2_2}
+                            onChange={handleChange}
+                            placeholder="Answer 2"
+                    />
+                    <input
+                            className="border border-gray-300 p-1 rounded-md shadow-md 
+                            focus:outline-none focus:ring-2 focus:ring-amber-500"
+                            type="text"
+                            name="answer2_3"
+                            value={formData.answer2_3}
+                            onChange={handleChange}
+                            placeholder="Answer 3"
+                    />
+                    <input
+                        className="border border-gray-300 p-1 rounded-md shadow-md 
+                        focus:outline-none focus:ring-2 focus:ring-amber-500"
+                        type="text"
+                        name="answer2_4"
+                        value={formData.answer2_4}
+                        onChange={handleChange}
+                        placeholder="Answer 4"
+                    />
+                </div>   
             </div>
             <div className="flex justify-end">
             <button
