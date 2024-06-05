@@ -3,7 +3,7 @@ const AddCandidate=()=>{
         <div>
             <div>
                 <form>
-                    <label></label>
+                    <div></div>
                 </form>
             </div>
         </div>
