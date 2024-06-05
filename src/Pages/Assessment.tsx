@@ -15,7 +15,7 @@ const Assessment=()=>{
                 Create Assessment{" "}
             </button>
             <button
-                onClick={() => navigate("")}
+                onClick={() => navigate("/attendance_conf")}
                 type="button"
                 className="text-white bg-CustomYellow
                 px-4 py-2 my-3 w-48 focus:outline-none rounded-lg 
