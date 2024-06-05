@@ -1,5 +1,10 @@
+import ProgressTable from "../Components/Tables/ProgressTable";
+
 const Progress = () => {
-  return <div>Progress</div>;
+  return (
+      <div>
+        <ProgressTable/>
+      </div>);
 };
 
 export default Progress;

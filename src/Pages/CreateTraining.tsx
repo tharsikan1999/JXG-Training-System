@@ -5,14 +5,11 @@ import { TEInput } from "tw-elements-react";
 import '../index.css'
 import Calender from "../Components/Calender";
 import Dropdown from "../Components/Dropdown";
-import SearchBar from "../Components/SearchBar";
 import Assessment from "./Assessment";
 
 
 const CreateTraining = () => {
-  const handleSearch = (query: string)=>{
-    console.log('Search query:', query);
-  };
+  
   const [formData, setFormData] = useState({
     status: '',
     startDate: '',
@@ -211,13 +208,18 @@ const CreateTraining = () => {
         <div>
           <div className="flex mt-4 mx-28">
           <h2 className="mr-4">Candidates :</h2>
-          <SearchBar onSearch={handleSearch}/>
+          <button
+                onClick={() => navigate("")}
+                type="button"
+                className="text-white bg-CustomYellow
+                px-9 py-2 focus:outline-none rounded-lg 
+                text-sm font-semibold text-center 
+                transition-transform duration-300 ease-in-out transform hover:scale-105">
+                Search{" "}
+            </button>
           </div>
-          
-          {/*<SearchBar onSearch={handleSearch}/></div>*/}
         </div>
         <div className="flex justify-end mt-6">          
-            {/**this is only linked for now */}
             <button
                 onClick={() => navigate("/assessment")}
                 type="button"
@@ -227,6 +229,7 @@ const CreateTraining = () => {
                 transition-transform duration-300 ease-in-out transform hover:scale-105">
                 Create Assessment{" "}
             </button>
+            {/**this is only linked for now  when this button clicked form should be submitted*/}
             <button
                 onClick={() => navigate("/*")}
                 type="button"
