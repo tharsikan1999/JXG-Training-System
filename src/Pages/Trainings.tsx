@@ -11,12 +11,9 @@ const Trainings = () => {
   };
   return (
     <div>
-      <div className="grid grid-cols-3 gap-2">
-        <div>
+      <div className="flex justify-between items-center px-4 py-2">
+        <div className="flex space-x-4">
           <SearchBar onSearch={handleSearch}/>
-          
-        </div>
-        <div>
           <SortBar />
         </div>
         <div className="sm:place-self-end">
@@ -24,16 +21,12 @@ const Trainings = () => {
             onClick={() => navigate("/create_training")}
             type="button"
             className="text-white bg-CustomYellow
-            px-4 py-2 my-3 focus:outline-none rounded-lg 
+            px-4 py-2 focus:outline-none rounded-lg 
             text-sm font-semibold text-center 
             transition-transform duration-300 ease-in-out transform hover:scale-105">
             Create Training{" "}
           </button>
-        </div>
-         
-        
-          
-          
+        </div> 
       </div>
       <div className=" scroll-auto overflow-scroll">
             <TrainingTable />
