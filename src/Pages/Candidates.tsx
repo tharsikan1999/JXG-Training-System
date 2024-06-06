@@ -1,12 +1,22 @@
 import { useNavigate } from "react-router-dom";
 import CandidatesTable from "../Components/Tables/CandidatesTable";
 import AddCandidate from "./AddCandidate";
+import SearchBar from "../Components/SearchBar";
+import SortBar from "../Components/Sorting bars/SortBar";
 
 const Candidates = () => {
   const navigate = useNavigate();
+  const handleSearch =(query: string)=>{
+    console.log('Search query:', query);
+  };
   return (
     <div>
-      <div className="flex justify-end ">
+      <div className="flex justify-between items-center ">
+        <div className="flex space-x-4">
+          <SearchBar onSearch={handleSearch}/>
+          <SortBar/>
+        </div>
+        <div className="flex space-x-4">
         <button
               onClick={() => navigate("/add_candidate")}
               type="button"
@@ -25,6 +35,7 @@ const Candidates = () => {
               transition-transform duration-300 ease-in-out transform hover:scale-105">
               Bulk Add{" "}
         </button>
+        </div>
       </div>
       <div className=" scroll-auto overflow-scroll">
       <CandidatesTable />
