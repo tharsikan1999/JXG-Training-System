@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import CandidatesTable from "../Components/Tables/CandidatesTable";
-import AddCandidate from "./AddCandidate";
 import SearchBar from "../Components/SearchBar";
 import SortBar from "../Components/Sorting bars/SortBar";
+import AddCandidate from "./AddCandidate";
+import BulkAdd from "./BulkAdd";
 
 const Candidates = () => {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ const Candidates = () => {
               Add Candidate{" "}
         </button>
         <button
-              onClick={() => navigate("/assessment")}
+              onClick={() => navigate("/bulk_add")}
               type="button"
               className="text-white bg-CustomYellow
               px-4 py-2 my-3 ml-3 focus:outline-none rounded-lg 

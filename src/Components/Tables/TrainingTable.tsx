@@ -11,7 +11,7 @@ import { useState } from "react";
 const TrainingTable = () => {
   const [selectedRowIndex, setSelectedRowIndex] = useState(null);
   return (
-    <div className="mx-auto flex justify-center   h-screen items-start overflow-scroll">
+    <div className="mx-auto flex justify-center   h-screen items-start auto-scroll">
       <table className="table-auto">
         <thead>
           <tr>

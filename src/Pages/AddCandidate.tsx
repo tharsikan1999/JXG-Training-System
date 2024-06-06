@@ -31,7 +31,7 @@ const AddCandidate=()=>{
                             <div className="mb-4 mx-28">
                                 <label className="block mb-1">Name</label>
                                 <input className="border border-gray-300 p-1 rounded-md
-                                shadow-sm focus:outline-none focus:ring focus:ring-amber-500"
+                                shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
                                 type="text" name="name" value={formData.name}
                                 onChange={handleChange}
                                 placeholder="Enter Candidate name"/>
@@ -39,7 +39,7 @@ const AddCandidate=()=>{
                             <div className="mb-4 mx-28">
                                 <label className="block mb-1">Email</label>
                                 <input className="border border-gray-300 p-1 rounded-md
-                                shadow-sm focus:outline-none focus:ring focus:ring-amber-500"
+                                shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
                                 type="text" name="email" value={formData.email}
                                 onChange={handleChange}
                                 placeholder="Enter Email"/>
@@ -47,7 +47,7 @@ const AddCandidate=()=>{
                             <div className="mb-4 mx-28">
                                 <label className="block mb-1">Zone</label>
                                 <input className="border border-gray-300 p-1 rounded-md
-                                shadow-sm focus:outline-none focus:ring focus:ring-amber-500"
+                                shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
                                 type="text" name="zone" value={formData.zone}
                                 onChange={handleChange}
                                 placeholder="Enter Zone"/>
@@ -55,7 +55,7 @@ const AddCandidate=()=>{
                             <div className="mb-4 mx-28">
                                 <label className="block mb-1">Branch</label>
                                 <input className="border border-gray-300 p-1 rounded-md
-                                shadow-sm focus:outline-none focus:ring focus:ring-amber-500"
+                                shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
                                 type="text" name="branch" value={formData.branch}
                                 onChange={handleChange}
                                 placeholder="Enter Branch"/>
@@ -66,7 +66,7 @@ const AddCandidate=()=>{
                             <div className="mb-4 mx-28">
                                 <label className="block mb-1">Phone Number</label>
                                 <input className="border border-gray-300 p-1 rounded-md
-                                shadow-sm focus:outline-none focus:ring focus:ring-amber-500"
+                                shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
                                 type="text" name="phoneNumber" value={formData.phoneNumber}
                                 onChange={handleChange}
                                 placeholder="Enter Phone Number"/>
@@ -74,7 +74,7 @@ const AddCandidate=()=>{
                             <div className="mb-4 mx-28">
                                 <label className="block mb-1">NIC</label>
                                 <input className="border border-gray-300 p-1 rounded-md
-                                shadow-sm focus:outline-none focus:ring focus:ring-amber-500"
+                                shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
                                 type="text" name="nic" value={formData.nic}
                                 onChange={handleChange}
                                 placeholder="Enter NIC Number"/>
@@ -82,18 +82,21 @@ const AddCandidate=()=>{
                             <div className="mb-4 mx-28">
                                 <label className="block mb-1">Region</label>
                                 <input className="border border-gray-300 p-1 rounded-md
-                                shadow-sm focus:outline-none focus:ring focus:ring-amber-500"
+                                shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
                                 type="text" name="region" value={formData.region}
                                 onChange={handleChange}
                                 placeholder="Enter Region"/>
                             </div>
                             <div className="mb-4 mx-28">
-                                <label className="block mb-1">Channel</label>
-                                <input className="border border-gray-300 p-1 rounded-md
-                                shadow-sm focus:outline-none focus:ring focus:ring-amber-500"
-                                type="text" name="channel" value={formData.channel}
+                            <label className="block mb-1">Channel</label>
+                            <input className="border border-gray-300 p-1 rounded-md shadow-sm 
+                                focus:outline-none focus:ring-2 focus:ring-amber-500"
+                                type="text"
+                                name="channel"
+                                value={formData.channel}
                                 onChange={handleChange}
-                                placeholder="Enter Channel"/>
+                                placeholder="Enter Channel"
+                            />
                             </div>
                         </div>  
                     </div>

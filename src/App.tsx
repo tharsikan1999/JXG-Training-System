@@ -20,6 +20,7 @@ import Assessment from "./Pages/Assessment";
 import CreateAssessment from "./Pages/CreateAssessment";
 import AttendanceConf from "./Pages/AttendanceConf";
 import AddCandidate from "./Pages/AddCandidate";
+import BulkAdd from "./Pages/BulkAdd";
 
 const App = () => {
   
@@ -72,6 +73,10 @@ const App = () => {
             <Route 
               path="/add_candidate"
               element={<DefaultLayout children={<AddCandidate />}/>}
+            />
+            <Route 
+              path="/bulk_add"
+              element={<DefaultLayout children={<BulkAdd />}/>}
             />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
